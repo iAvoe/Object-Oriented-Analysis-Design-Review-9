@@ -1,9 +1,10 @@
 # Object-Oriented-Analysis-Design-Review-9
-
 ## Database Design
 
 **Database**:
 - An integrated collection of stored data that is centrally managed and controlled
+- Part of a larger whole information system
+- Provides for data collection, storage and retrieval.
 
 **Database management system (DBMS)**
 - A system software component that manages and controls one or more databases
@@ -11,27 +12,39 @@
 - DBMSs have a way they communicate with each other
 
 **Schema**:
-- DB component that contains descriptive information about the data stored in the physical data store (sometimes called metadata)
+- DB component that contains descriptive information about the data stored in the physical data store
+- A collection of metadatas
 
 **Structured Query Language (SQL)**:
 - Language to access and update data in a relational DBMS
 
 ### Database Schema
 - Organization of individual stored data items into higher level groups
-- Associations among tables or classes 
+- Associations among tables or classes
 - Details of physical data store organization, including types, lengths, locations, and indexing of data items
-- Access and content controls, including allowable values for specific data items, value dependencies among multiple data items, and lists of users allowed to read or update data items
 
-A complete information system comprises people, hardware, software, the database(s)/DBMS, application programs & procedures.
+**Example**::
+- Access and content controls
+- Allowable values for specific data items
+- Value dependencies among multiple data items
+- Lists of users allowed to read or update data items
 
-The database is part of a larger whole information system, which provides for data collection, storage and retrieval.
-- **Waterfall development**: design and implement database first
-- **Iterative development**:
-  - DB is foundational, early iterations need to focus on data and key portions of the database. 
+**Information System** - A complete information system comprises:
+- People
+- Hardware
+- Software
+- Database(s)/DBMS
+- Applications
+- Procedures
+
+#### Dev-Model Deployment Phase:
+- **Waterfall**: design and implement database first
+- **Iterative**:
+  - DB is foundational
+  - Early iterations need to focus on data and key portions of the database
   - Important to consider database impacts of all subsystems
 
 ### DBMS Characteristics
-
 - Simultaneous access by many users and many applications
 - Direct access to data with a data interface
 - Uniform and consistent access
@@ -39,7 +52,6 @@ The database is part of a larger whole information system, which provides for da
 - Most DBMSs comes with an Open Database Connectivity driver that allows the DB to integrate/communicate with other DBs.
 
 ### Design and Administration
-
 **Data Administrator (DA)**
 - Person in charge of structure and integrity of the data
 **Data standards**:
@@ -92,7 +104,7 @@ A database structure based on the relational model.
 - **Primary key**: the key chosen by a database designer to represent relationships among rows in different tables
 - **Foreign key**: an attribute that duplicates the primary key of a different (or foreign) table
 
-###  Database Associations
+### Database Associations
 
 **One-to-Many**
 - Add primary key attribute of the “one” class to the “many” class as a foreign key
@@ -231,42 +243,42 @@ Data security is a layer of Information Security. Data is a part, and informatio
 
 ## Quiz:
 
-### Others
+GUID stands for ______ ______ ______.​
+- Globally unique identifier
 
-Every database in a DBMS consists of two separate data stores.​
-- true
-
-The domain data in a database is sometimes referred to as metadata.​
-- false
+### DB Design & Deployment
 
 A local business office with a small database which is only used by two or three users would most probably implement a desktop DBMS.​
-- false
-
-A phased database development and deployment (using iterative development) is usually the safest approach to deploying the best database solution.​
-- false
+- False,this puts customer and company data in risk
 
 In an iterative approach to software development, it is usually best to develop the database in the first few iterations.​
-- true
+- True
+
+A phased database development and deployment (using iterative development) is usually the safest approach to deploying the best database solution.​
+- False,  DB deployment affect how the application works
 
 To ensure that the database is designed correctly, an important member of the project team is the data administrator.​
-- false
+- False
 
-In a one-to-many association the primary key of the "many" class is placed as a foreign key in the "one" class.​
-- false
-
-Including a total amount field as the sum of other fields in a table is a violation of second normal form.​
-- false
-
-GUID stands for ______ ______ ______.​
-- globally unique identifier
-
-### DB Schema
+### DB Schema / Metadatas
 
 A(n) ____________________ describes the structure, content, and access controls of a physical data store or database.​
 - schema
 
 A(n) ____ describes the structure, content, and access controls of a physical data store or database.​
 - schema
+
+The domain data in a database is sometimes referred to as metadata
+- False
+
+In a one-to-many association the primary key of the "many" class is placed as a foreign key in the "one" class.​
+- False
+
+Including a total amount field as the sum of other fields in a table is a violation of second normal form.​
+- False
+
+Every database in a DBMS consists of two separate data stores
+- True
 
 ### Distributed DB
 
@@ -300,7 +312,7 @@ A technique for protecting the database wherein every update to the database is 
 ### DB locks
 
 A write lock on a database allows other users to read the data, but they cannot update any data.​
-- false
+- False
 
 A database lock that does not allow another user to update the data is called what?​
 - write lock
@@ -326,7 +338,7 @@ A constraint which is stored in the schema and which ensures that all foreign ke
 - referential integrity constraint
 
 Referential integrity is a consistent relational database state in which every foreign key value also exists as a primary key value.
-- true
+- True
 
 The condition that requires that every value in a foreign key must have an equivalent value as the primary key in another table is called ________ ______.
 - referential integrity
@@ -378,28 +390,28 @@ A relation describes the structure, content, and access controls of a physical d
 - False
 
 Every table in a relational database must have a foreign key.​
-- false
+- False
 
 A foreign key is a field or set of fields stored in one table that also exists as a primary key in another table.​
-- true
+- True
 
 Relationships in a relational database are usually represented by embedding a foreign key in each participating table.​
-- false
+- False
 
 Classes that participate in a classification hierarchy can be represented within a relational database as a set of tables with the primary key of the general class table replicated in the other tables.​
-- true
+- True
 
 Classes that participate in a classification relationship can only be represented within a relational database as a single table containing all the attributes in each class.​
-- false
+- False
 
 Problem domain modeling and database normalization are incompatible techniques for relational database design.​
-- false
+- False
 
 One-to-many and many-to-many relationships are both represented by foreign keys in a relational database.​
-- true
+- True
 
 Relationships between tables is usually indicated through the use of a foreign key.​
-- true
+- True
 
 ### Relational Database Items
 
@@ -425,10 +437,10 @@ In a relational database, a row can be referred to as a(n) ____.​
 - tuple
 
 A relational database table is in third normal form (3NF) if it is in second normal form (2NF) and if every non-key field is functionally dependent on the primary key.
-- false
+- False
 
 A relational database table is in third normal form (3NF) if it is in second normal form (2NF) and if no non-key field is functionally dependent on any other non-key field.​
-- true
+- True
 
 ____ are a critical element of relational database design because they are the bases for representing relationships among tables.​
 - keys
@@ -521,4 +533,3 @@ A data type that is defined by extending or combining other data types is called
 
 A field in a relational table called "address" would be an example of what?​
 - complex data type
-
